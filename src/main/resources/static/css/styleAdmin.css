@@ -1,0 +1,9 @@
+.song-select {
+    display: flex;
+    align-items: center;
+}
+
+.song-select input {
+    flex-grow: 1;
+    margin-right: 10px;
+}

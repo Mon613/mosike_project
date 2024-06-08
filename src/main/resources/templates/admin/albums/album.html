@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard Mosike</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Phoenixcoded" />
+    <!-- Favicon icon -->
+    <link rel="icon" th:href="@{/assets_admin/images/2.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/assets_admin/fonts/fontawesome-free-6.5.2-web/css/all.css}">
+    <link rel="stylesheet" th:href="@{/assets_admin/fonts/fontawesome-free-6.5.2-web/js/all.js}">
+
+
+    <!-- vendor css -->
+    <link rel="stylesheet" th:href="@{/assets_admin/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/styleAdmin.css}">
+
+
+
+</head>
+<body class="">
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+    <div class="loader-track">
+        <div class="loader-fill"></div>
+    </div>
+</div>
+<!-- [ Pre-loader ] End -->
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar  ">
+    <div class="navbar-wrapper  ">
+        <div class="navbar-content scroll-div " >
+
+            <ul class="nav pcoded-inner-navbar ">
+
+                <li class="nav-item">
+                    <a href="/admin/views/getAll" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Home</span></a>
+                </li>
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Danh Mục</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="/admin/categories/getAll">Category</a></li>
+<!--                        <li><a href="sub_category.html">Sub-Category</a></li>-->
+                    </ul>
+                </li>
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">View</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="/admin/songs/getAll">Bài Hát</a></li>
+                        <li><a href="/admin/albums/getAll">Album</a></li>
+                        <li><a href="playlist.html">Playlist</a></li>
+                        <li><a href="thloai.html">Thể Loại</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/singers/getAll" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Ca Sĩ</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="banner.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Banner</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="new.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Tin tức</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="map-google.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Chat</span></a>
+                </li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Pages</label>
+                </li>
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span class="pcoded-mtext">Authentication</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="auth-signup.html" target="_blank">Sign up</a></li>
+                        <li><a href="auth-signin.html" target="_blank">Sign in</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
+
+            </ul>
+
+            <div class="card text-center">
+                <div class="card-block">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="feather icon-sunset f-40"></i>
+                    <h6 class="mt-3">Upgrade To Pro</h6>
+                    <p>Please contact us on our email for need any support</p>
+                    <a href="https://1.envato.market/PgJNQ" target="_blank" class="btn btn-primary btn-sm text-white m-0">Upgrade</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+<!-- [ navigation menu ] end -->
+<!-- [ Header ] start -->
+<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
+
+
+    <div class="m-header">
+        <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+        <a href="/admin/views/getAll" class="b-brand">
+            <!-- ========   change your logo hear   ============ -->
+            <img th:src="@{/assets_admin/images/Mosike.png}" alt="" class="logo" style=" width: 130px;">
+            <img th:src="@{/assets_admin/images/2.png}" alt="" class="logo-thumb" style="width: 30px;">
+        </a>
+        <a href="#!" class="mob-toggler">
+            <i class="feather icon-more-vertical"></i>
+        </a>
+    </div>
+
+
+
+</header>
+<!-- [ Header ] end -->
+
+
+
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Bài Hát</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin/views/getAll"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="">View</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/albums/getAll">Album</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ stiped-table ] start -->
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Album</h5>
+                        <div style="float: right;"><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#gridSystemModal">Thêm mới</button></div>
+                    </div>
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th >Id</th>
+                                    <th>Tên Album</th>
+<!--                                    <th>Tên ca sĩ</th>-->
+                                    <th>Hình Album</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody th:each="album:${album_list}">
+                                <tr>
+                                    <td th:text="${album.id}"></td>
+                                    <td th:text="${album.nameAlbum}"></td>
+                                    <td th:text="${album.imgAlbum}  "></td>
+<!--                                    <td th:text="${album}">Otto</td>-->
+                                    <td>
+                                        <div class="btn-group mb-2 mr-2">
+                                            <a class="dropdown-toggle h-drop" href="#" data-toggle="dropdown">More</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#!">View</a>
+                                                <a class="dropdown-item" href="#!">Edit</a>
+                                                <a class="dropdown-item" th:attr="onclick=|delete_album('${album.id}')|" >Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end">
+                                <li class="page-item " th:if="${this_page>1}">
+                                    <a class="page-link" th:href="@{'/admin/albums/getAll?page='+${this_page -1}}" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a>
+                                </li>
+                                <li class="page-item" th:each="i:${#numbers.sequence(1,total_page)}">
+                                    <a th:if="${this_page == i}" class="page-link" th:href="@{'/admin/albums/getAll?page='+${i}}" th:text="${i}" ></a>
+                                    <a th:unless="${this_page == i}" class="page-link" th:href="@{'/admin/albums/getAll?page='+${i}}" th:text="${i}" ></a>
+                                </li>
+                                <li class="page-item" th:if="${this_page < total_page}">
+                                    <a class="page-link" th:href="@{'/admin/albums/getAll?page='+${this_page +1}}" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- [ stiped-table ] end -->
+            <!-- modal-start -->
+            <div class="col-xl-4 col-md-6">
+                <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="gridModalLabel">Thêm Album</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form method="post" action="create" th:object="${album}" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="nameAlbum">Tên Album</label>
+                                            <input type="text" class="form-control" id="nameAlbum"  placeholder="Tên album" name="nameAlbum" th:field="*{nameAlbum}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="imgAlbum">Hình Album</label>
+                                            <input type="file" class="form-control" id="imgAlbum" name="imgAlbum"  th:field="*{imgFile}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="listSong">Danh sách bài hát</label>
+                                            <input type="text" class="form-control " id="searchTerm"  placeholder="Tên bài hát"  th:oninput="searchSongs()"/>
+                                            <select th:field="*{songList}" multiple id="listSong" name="songList" class="custom-select song_select" required>
+                                                <option th:each="song : ${songs}" th:value="${song.id}" th:text="${song.nameSong}"></option>
+                                            </select>
+                                        </div>
+                                        <button type="button" class="btn  btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn  btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal-end -->
+
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+<!-- [ Main Content ] end -->
+
+
+<!-- Required Js -->
+<script th:src="@{/assets_admin/js/vendor-all.min.js}"></script>
+<script th:src="@{/assets_admin/js/plugins/bootstrap.min.js}"></script>
+<script th:src="@{/assets_admin/js/pcoded.min.js}"></script>
+
+<!-- Apex Chart -->
+<script th:src="@{/assets_admin/js/plugins/apexcharts.min.js}"></script>
+
+
+<!-- custom-chart js -->
+<script th:src="@{/assets_admin/js/pages/dashboard-main.js}"></script>
+<script th:src="@{/js/admin.js}"></script>
+
+</body>
+
+</html>
