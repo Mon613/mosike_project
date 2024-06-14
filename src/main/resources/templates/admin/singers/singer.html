@@ -188,20 +188,20 @@
                                 </tbody>
                             </table>
                         </div>
-<!--                        <nav aria-label="Page navigation example">-->
-<!--                            <ul class="pagination justify-content-end">-->
-<!--                                <li class="page-item " th:if="${this_page>1}">-->
-<!--                                    <a class="page-link" th:href="@{'/admin/albums/getAll?page='+${this_page -1}}" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a>-->
-<!--                                </li>-->
-<!--                                <li class="page-item" th:each="i:${#numbers.sequence(1,total_page)}">-->
-<!--                                    <a th:if="${this_page == i}" class="page-link" th:href="@{'/admin/albums/getAll?page='+${i}}" th:text="${i}" ></a>-->
-<!--                                    <a th:unless="${this_page == i}" class="page-link" th:href="@{'/admin/albums/getAll?page='+${i}}" th:text="${i}" ></a>-->
-<!--                                </li>-->
-<!--                                <li class="page-item" th:if="${this_page < total_page}">-->
-<!--                                    <a class="page-link" th:href="@{'/admin/albums/getAll?page='+${this_page +1}}" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </nav>-->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end">
+                                <li class="page-item " th:if="${this_page>1}">
+                                    <a class="page-link" th:href="@{'/admin/singers/getAll?page='+${this_page -1}}" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a>
+                                </li>
+                                <li class="page-item" th:each="i:${#numbers.sequence(1,total_page)}">
+                                    <a th:if="${this_page == i}" class="page-link" th:href="@{'/admin/singers/getAll?page='+${i}}" th:text="${i}" ></a>
+                                    <a th:unless="${this_page == i}" class="page-link" th:href="@{'/admin/singers/getAll?page='+${i}}" th:text="${i}" ></a>
+                                </li>
+                                <li class="page-item" th:if="${this_page < total_page}">
+                                    <a class="page-link" th:href="@{'/admin/singers/getAll?page='+${this_page +1}}" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>

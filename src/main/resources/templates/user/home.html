@@ -15,12 +15,14 @@
     <section class="top">
 
         <section class="sidebar">
-            <div class="logo">
+            <a href="/user/home" style="background-color: transparent;">
+            <div class="logo" >
                 <img th:src="@{/assets_user/img/Mosike.png}" alt="mosike logo">
             </div>
             <div class="logo_alt">
                 <img th:src="@{/assets_user/img/2.png}" alt="small mosike logo">
             </div>
+            </a>
             <nav>
                 <ul>
                     <li id="menu_home" style="border-left: solid 5px seagreen;">
@@ -30,7 +32,7 @@
                         </a>
                     </li>
                     <li id="menu_search">
-                        <a href="search.html">
+                        <a href="/user/search">
                             <img th:src="@{/assets_user/img/search.svg}" alt="menu search icon">
                             <h2>Search</h2>
                         </a>
@@ -113,10 +115,10 @@
                     <h2 class="card_title">Bài hát phổ biến</h2>
                     <div class="suggestions">
                         <div class="card_item song_play" th:each="song:${song_list}">
-                            <a href="#!" th:attr="onclick=|playAudio('${song.nameSong}')|"><img class="overlay svg play"  th:src="@{/assets_user/img/play-button-icon.svg}" alt="play button overlay"></a>
+                            <a href="#!" th:attr="onclick=|playAudio('${song.id}')|"><img class="overlay svg play"  th:src="@{/assets_user/img/play-button-icon.svg}" alt="play button overlay"></a>
                             <img th:src="${song.imgSong}" alt="card item 6 cover">
                             <h3 style="    margin-top: 16px !important;" th:text="${song.nameSong}" ></h3>
-                            <span style="height: 30px;" th:each="singer:${song.singer}" th:text="${singer.nameSinger}"></span>
+                            <span class="name_singer" style="height: 30px;"  th:text="${song.nameSinger}"></span>
                         </div>
 
                     </div>
@@ -128,7 +130,7 @@
                         <div class="card_item" th:each="singer:${singer_list}">
                             <a href="#"><img class="overlay svg " th:src="@{/assets_user/img/play-button-icon.svg}" alt="play button overlay"></a>
                             <img th:src="${singer.imgSinger}" alt="card item 6 cover">
-                            <h3 th:text="${singer.nameSinger}"></h3>
+                            <h3  style="    margin-top: 16px !important;" th:text="${singer.nameSinger}"></h3>
                         </div>
                     </div>
                 </article>
@@ -138,29 +140,28 @@
 
     </section>
     <!-- BOTTOM html -->
-    <section class="bottom">
-
+    <section class="bottom master_play">
         <section class="playing">
             <img id="current_art" th:src="@{/assets_user/img/stranger.jpeg}" alt="current playing album art">
             <div id="current_song">
                 <h3 class="current_song_title" id="current_song_title">Song Name</h3>
-                <p class="current_song_artist">Band Name</p>
+                <p class="current_song_artist" id="singer_song">Band Name</p>
             </div>
-            <a id="like" href="#">
-                <img class="svg" th:src="@{/assets_user/img/heart-thin-icon.svg}" alt="like icon">
-            </a>
-            <a id="folder" href="#">
-                <img class="svg" th:src="@{/assets_user/img/folder-line-icon.svg}" alt="folder icon">
-            </a>
+<!--            <a id="like" href="#">-->
+<!--                <img class="svg" th:src="@{/assets_user/img/heart-thin-icon.svg}" alt="like icon">-->
+<!--            </a>-->
+<!--            <a id="folder" href="#">-->
+<!--                <img class="svg" th:src="@{/assets_user/img/folder-line-icon.svg}" alt="folder icon">-->
+<!--            </a>-->
         </section>
 
         <section class="controls">
             <div class="playback play_pause_btn">
-                <a href="#"><i id="ic_shuffle" class="bi bi-shuffle" style="font-size: 20px;" alt="controls shuffle icon"></i></a>
-                <a href="#"><i id="ic_skip" class="bi bi-skip-start-fill" style="font-size: 25px;" alt="controls back track icon"></i></a>
-                <a href="#"><i id="ic_play" class="bi bi-play-circle" style="font-size: 30px; margin-left: 10px;" alt="controls play icon"></i></a>
-                <a href="#"><i id="ic_prev" class="bi bi-skip-end-fill" style="font-size: 25px;" alt="controls forward track icon"></i></a>
-                <a href="#"><i id="ic_repeat" class="bi bi-repeat" style="font-size: 20px;" alt="controls repeat icon"></i></a>
+                <i id="ic_shuffle" class="bi bi-shuffle" style="font-size: 20px;" alt="controls shuffle icon"></i>
+                <i id="ic_skip" class="bi bi-skip-start-fill" style="font-size: 25px;" alt="controls back track icon"></i>
+                <i id="ic_play" class="bi bi-play-circle" style="font-size: 30px; margin-left: 10px;" alt="controls play icon"></i>
+                <i id="ic_prev" class="bi bi-skip-end-fill" style="font-size: 25px;" alt="controls forward track icon"></i>
+                <i id="ic_repeat" class="bi bi-repeat" style="font-size: 20px;" alt="controls repeat icon"></i>
             </div>
             <div class="progress">
                 <h3 id="time_played">0:25</h3>
@@ -173,12 +174,12 @@
         </section>
 
         <section class="volume">
-            <a id="list">
-                <img class="svg" th:src="@{/assets_user/img/list-view-icon.svg}" alt="volume controls">
-            </a>
-            <a id="computer">
-                <img class="svg" th:src="@{/assets_user/img/monitor-icon.svg}" alt="volume controls">
-            </a>
+<!--            <a id="list">-->
+<!--                <img class="svg" th:src="@{/assets_user/img/list-view-icon.svg}" alt="volume controls">-->
+<!--            </a>-->
+<!--            <a id="computer">-->
+<!--                <img class="svg" th:src="@{/assets_user/img/monitor-icon.svg}" alt="volume controls">-->
+<!--            </a>-->
             <a id="speaker">
                 <img class="svg" th:src="@{/assets_user/img/volume-icon.svg}" alt="volume controls">
             </a>
@@ -189,6 +190,13 @@
     </section>
 
 </div>
+<script>
+    const singers = document.querySelectorAll('.name_singer');
+    singers.forEach(singer=>{
+        singer.textContent = singer.textContent.substring(0,singer.textContent.length-2);
+
+    })
+</script>
 <script th:src="@{/js/admin.js}"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ public class Singer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nameSinger;
+    private String nameSinger = "";
     private String imgSinger;
     @ManyToMany(mappedBy = "singerList")
     private List<Song> songList;

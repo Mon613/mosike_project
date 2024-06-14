@@ -12,5 +12,5 @@ import java.util.List;
 public class TheloaiDTO {
     private Long id;
     private String nameTl;
-    private List<Song> songList;
+    private List<SongDTO> songList;
 }

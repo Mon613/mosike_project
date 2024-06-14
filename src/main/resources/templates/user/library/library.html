@@ -15,12 +15,14 @@
     <section class="top">
 
         <section class="sidebar">
-            <div class="logo">
-                <img th:src="@{/assets_user/img/Mosike.png}" alt="Mosike logo">
-            </div>
-            <div class="logo_alt">
-                <img th:src="@{/assets_user/img/2.png}" alt="small mosike logo">
-            </div>
+            <a href="/user/home" style="background-color: transparent;">
+                <div class="logo" >
+                    <img th:src="@{/assets_user/img/Mosike.png}" alt="mosike logo">
+                </div>
+                <div class="logo_alt">
+                    <img th:src="@{/assets_user/img/2.png}" alt="small mosike logo">
+                </div>
+            </a>
             <nav>
                 <ul>
                     <li id="menu_home" >
@@ -30,7 +32,7 @@
                         </a>
                     </li>
                     <li id="menu_search">
-                        <a href="search.html">
+                        <a href="/user/search">
                             <img th:src="@{/assets_user/img/search.svg}" alt="menu search icon">
                             <h2>Search</h2>
                         </a>

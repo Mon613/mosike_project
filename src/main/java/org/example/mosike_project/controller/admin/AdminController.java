@@ -18,8 +18,8 @@ public class AdminController {
     private ICategory iCategory;
     @GetMapping("/getAll")
     public String index(Model model){
-        List<CategoryDTO> list = iCategory.getAll();
-        model.addAttribute("category_list",list);
+//        List<CategoryDTO> list = iCategory.getAll();
+//        model.addAttribute("category_list",list);
         return "admin/Dashboard";
     }
 }

@@ -49,6 +49,7 @@ a:hover, .named_playlist a p:hover {
 .card_item a {
         grid-area: art;
         place-self: center;
+    background-color: transparent;
 }
 .overlay {
     width: 100px;
@@ -59,7 +60,8 @@ a:hover, .named_playlist a p:hover {
 }
 .card_item:hover .overlay{
     visibility: visible;
-    opacity: 75%
+    opacity: 75%;
+    /*background-color: transparent;*/
 }
 
 /* SCROLL behaviour */
@@ -212,7 +214,7 @@ a:hover, .named_playlist a p:hover {
             "upgrade"
             "catagories"
             "music";
-            grid-template-rows: 100px 1fr;
+            grid-template-rows: 100px 0fr;
             max-height: 100vh;
         }
         
@@ -235,7 +237,25 @@ a:hover, .named_playlist a p:hover {
                     align-items: center;
                     justify-content: center;
                 }
-                
+                .search{
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    width: 100%;
+                    height: 45px;
+                    background-color: #1d1d1d;
+                    border: 1px solid #464748;
+                    padding: 10px;
+                    border-radius: 8px;
+                }
+
+                .search input{
+                    width: 100%;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    color: #fff;
+                }
            
             .catagories ul {
                 grid-area: catagories;
@@ -404,7 +424,7 @@ a:hover, .named_playlist a p:hover {
                 position:relative;
                 top: 5px;
             }
-                .playback a {
+                .playback .bi {
                     object-fit: contain;                   
                     padding: 2px;
                 }
@@ -520,8 +540,11 @@ a:hover, .named_playlist a p:hover {
 }
 /* MEDIA QUERIES */
 @media screen and (max-width: 850px) {
-    .playing, .controls, .volume {
+    .playing {
         transform: scale(80%);
+    }
+     .controls, .volume {
+        transform: scale(65%);
     }
     #progress_bar {
         width: 150px;
@@ -554,7 +577,19 @@ a:hover, .named_playlist a p:hover {
     max-width: 100%;
     padding-bottom: 285px;
 }
+.header_playlist{
+    margin-left: 20px;
+}
+.header_playlist i{
+    color: green;
+    font-size: 40px;
+}
+.header_playlist i:hover{
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50%;
 
+}
 .playlist {
     list-style-type: none;
     padding: 0;

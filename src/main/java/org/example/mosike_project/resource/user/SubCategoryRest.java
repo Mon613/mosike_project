@@ -1,4 +1,4 @@
-package org.example.mosike_project.resource;
+package org.example.mosike_project.resource.user;
 
 
 import org.example.mosike_project.dto.SubCategoryDTO;

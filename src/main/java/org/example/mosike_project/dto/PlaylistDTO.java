@@ -14,5 +14,5 @@ public class PlaylistDTO {
     private Long id;
     private String namePlaylist;
     private String imgPlaylist;
-    private List<Song> songList;
+    private List<SongDTO> songList;
 }

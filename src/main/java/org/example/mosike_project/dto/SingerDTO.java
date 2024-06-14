@@ -15,6 +15,6 @@ public class SingerDTO {
     private Long id;
     private String nameSinger;
     private String imgSinger;
-    private List<Song> songList;
-    private List<Album> albums;
+    private List<SongDTO> songList;
+    private List<AlbumDTO> albums;
 }

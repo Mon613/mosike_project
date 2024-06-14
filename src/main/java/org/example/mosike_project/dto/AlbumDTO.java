@@ -13,7 +13,7 @@ public class AlbumDTO {
     private Long id;
     private String nameAlbum;
     private String imgAlbum;
-    private List<Song> songList;
+    private List<SongDTO> songList;
 
     public AlbumDTO(String nameAlbum){
         this.nameAlbum=nameAlbum;

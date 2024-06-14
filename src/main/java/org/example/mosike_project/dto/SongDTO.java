@@ -16,8 +16,6 @@ public class SongDTO {
     private String nameSong;
     private String imgSong;
     private String linkSong;
-    private List<Singer> singer;
-
-
+    private String nameSinger;
 
 }
