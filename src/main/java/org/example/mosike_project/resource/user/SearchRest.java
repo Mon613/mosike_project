@@ -1,8 +1,10 @@
 package org.example.mosike_project.resource.user;
 
+import net.sf.jsqlparser.statement.analyze.Analyze;
 import org.example.mosike_project.dto.SongDTO;
 import org.example.mosike_project.entities.Song;
 import org.example.mosike_project.mapper.SongMapper;
+import org.example.mosike_project.repositories.SongRepository;
 import org.example.mosike_project.services.ISong;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,10 +23,12 @@ public class SearchRest {
     private ISong iSong;
     @Autowired
     private SongMapper songMapper;
+    @Autowired
+    private SongRepository songRepository;
 
     @GetMapping("/searchSong")
     private ResponseEntity<List<SongDTO>> findByNameSong(@RequestParam("txt")String txt){
-        List<SongDTO> songList = iSong.findByName(txt).stream().map(e->songMapper.toDto(e)).toList();
+        List<SongDTO> songList = songRepository.findByNameSongContainingIgnoreCase(txt).stream().map(e->songMapper.toDto(e)).toList();
         return new ResponseEntity<>(songList, HttpStatus.OK);
     }
 }

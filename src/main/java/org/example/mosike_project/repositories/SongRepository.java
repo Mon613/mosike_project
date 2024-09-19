@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface SongRepository extends JpaRepository<Song,Long> {
     List<Song> findByNameSong(String txt);
-
+    List<Song> findByNameSongContainingIgnoreCase(String txt);
 
 
 }

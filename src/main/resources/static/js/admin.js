@@ -172,3 +172,10 @@ audio.addEventListener('ended',()=>{
         audio.pause();
     }
 })
+
+//search song
+function searchSong(){
+    console.log('input')
+    window.location.href="searchs?txt="+input;
+
+}
